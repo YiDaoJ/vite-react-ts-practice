@@ -1,4 +1,4 @@
-### practice about implementing react component
+### practice implementing react component
 
 - display and control component in storybook
 - test with react-testing-library
