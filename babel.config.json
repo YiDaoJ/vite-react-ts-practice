@@ -1,0 +1,16 @@
+// when used babel.config.js,get error: You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously.
+// use babel.config.json instead and solved
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ]
+}
