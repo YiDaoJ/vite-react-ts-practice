@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
 
@@ -6,7 +6,7 @@ type ButtonSize = "small" | "medium" | "large";
 
 interface ButtonProps {
   size?: ButtonSize;
-  onClick(evet: MouseEvent<HTMLButtonElement>): void;
+  onClick(event: MouseEvent<HTMLButtonElement>): void;
 }
 
 const getSize = (size?: ButtonSize): SerializedStyles => {

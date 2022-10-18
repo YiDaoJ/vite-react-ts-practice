@@ -6,7 +6,11 @@ import userEvent from "@testing-library/user-event";
 describe("Button test", () => {
   test("render Button component", () => {
     const handleClick = jest.fn();
-    const { asFragment } = render(<Button size="large">Test</Button>);
+    const { asFragment } = render(
+      <Button size="large" onClick={handleClick}>
+        Test
+      </Button>
+    );
     // screen.debug();
 
     expect(asFragment()).toMatchSnapshot();
