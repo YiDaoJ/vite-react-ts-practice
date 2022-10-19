@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 
-import { Radio } from "./components";
+import { Radio, RadioButton } from "./components";
 
 function App() {
   const [value, setValue] = useState<string>("english");
@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <RadioButton name="test" label="Test" />
       <Radio />
     </div>
   );

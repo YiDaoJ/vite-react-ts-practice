@@ -3,10 +3,10 @@ import styled from "@emotion/styled";
 import React, { ChangeEvent, FC } from "react";
 
 interface RadioButtonProps {
-  checked: boolean;
+  checked?: boolean;
   label: string;
-  name?: string;
-  onChange(event: ChangeEvent<HTMLInputElement>): void;
+  name: string;
+  onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({
