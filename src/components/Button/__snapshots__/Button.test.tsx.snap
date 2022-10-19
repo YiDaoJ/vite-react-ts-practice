@@ -3,7 +3,7 @@
 exports[`Button test render Button component 1`] = `
 <DocumentFragment>
   <button
-    class="css-e4y67s"
+    class="css-83quec-Button-getSize e1afpsjd0"
   >
     Test
   </button>
