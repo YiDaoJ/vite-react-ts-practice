@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import { RadioButton } from "./RadioButton";
+import { RadioButton } from "../RadioButton";
 
 describe("RadioButton test", () => {
   test("render Radio Component", () => {
@@ -30,10 +30,9 @@ describe("RadioButton test", () => {
     // Qn: difference between userEvent and fireEvent
 
     const label = screen.getByLabelText("Test");
-    screen.debug(label);
+    // screen.debug(label);
     await user.click(label);
-
     expect(label).toBeChecked();
-    screen.debug(label);
+    // screen.debug(label);
   });
 });
