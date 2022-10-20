@@ -1,21 +1,38 @@
 import React, { ChangeEvent, useState } from "react";
 
-import { Radio, RadioButton } from "./components";
-import { RadioGroupRebuild } from "./components/RadioGroup";
+import { Radio, RadioButton, RadioGroup } from "./components";
 
 function App() {
-  const [value, setValue] = useState<string>("english");
+  const handleChange = (value: string) => {
+    const info = { selected: value };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("event: ", event.target.name, event.target);
-    setValue(event.target.name);
+    fetch("http://localhost:4000/test", {
+      method: "POST",
+      // mode: "no-cors",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
     <div className='App'>
-      <RadioButton name='test' label='Test' />
-      <Radio />
-      <RadioGroupRebuild />
+      <Radio name='test' label='Test' />
+
+      {/* <RadioGroupRebuild /> */}
+      <RadioGroup
+        label='ANSCHLUSSART'
+        defaultValue='wifi'
+        onChange={handleChange}
+      >
+        <RadioButton value='cable' label='Kabel' />
+        <RadioButton value='wifi' label='WI-FI' />
+      </RadioGroup>
     </div>
   );
 }

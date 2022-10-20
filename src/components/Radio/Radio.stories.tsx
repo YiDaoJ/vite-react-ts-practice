@@ -1,9 +1,9 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { RadioButton } from "./RadioButton";
+import { RadioButton } from ".";
 
 export default {
-  title: "Component/Radio Button",
+  title: "Component/Radio",
   component: RadioButton,
 } as ComponentMeta<typeof RadioButton>;
 

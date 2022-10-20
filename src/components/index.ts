@@ -1,3 +1,2 @@
-export { RadioButton } from "./Radio/RadioButton";
-export { RadioGroup } from "./Radio/RadioGroup";
-export { Radio } from "./Radio/Radio";
+export { RadioButton as Radio } from "./Radio";
+export { RadioGroup, RadioButton } from "./RadioGroup";

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import React, { ChangeEvent, FC, PropsWithChildren, useState } from "react";
-import RadioGroupContext from "./RadioGroupContext";
+import RadioGroupContext from "./context";
 
 interface RadioGroupProps {
   label?: string;

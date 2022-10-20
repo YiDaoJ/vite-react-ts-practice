@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React, { ChangeEvent, FC, useContext, useEffect, useState } from "react";
-import RadioGroupContext from "./RadioGroupContext";
+import RadioGroupContext from "./context";
 
 interface RadioButtonProps {
   label: string;
@@ -9,8 +9,7 @@ interface RadioButtonProps {
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({ label, value }) => {
-  const { name, selected, onChange } = useContext(RadioGroupContext);
-  // console.log({ selected, value, checked: selected === value });
+  const { selected, onChange } = useContext(RadioGroupContext);
 
   return (
     <RadioWrapper>

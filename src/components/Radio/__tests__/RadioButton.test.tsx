@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import { RadioButton } from "../RadioButton";
+import { RadioButton } from "..";
 
 describe("RadioButton test", () => {
   test("render Radio Component", () => {
