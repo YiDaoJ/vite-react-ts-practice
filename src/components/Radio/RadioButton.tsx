@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import React, { ChangeEvent, FC } from "react";
+import React, { ChangeEvent, FC, useEffect, useState } from "react";
 
 interface RadioButtonProps {
-  checked?: boolean;
+  checked: boolean;
   label: string;
   name: string;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
@@ -14,22 +14,40 @@ export const RadioButton: FC<RadioButtonProps> = ({
   label,
   name,
   onChange,
-}) => (
-  <RadioWrapper>
-    <span className="radio-input">
-      <input
-        type="radio"
-        css={radioStyle}
-        name={name}
-        checked={checked}
-        onChange={onChange}
-      />
-    </span>
-    <span className="radio-label" css={labelStyle}>
-      {label}
-    </span>
-  </RadioWrapper>
-);
+}) => {
+  const [isChecked, setIsChecked] = useState<boolean>(checked || false);
+
+  useEffect(() => {
+    if (checked !== undefined) {
+      setIsChecked(checked);
+    }
+  }, [checked]);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(event);
+    }
+
+    setIsChecked(event.target.checked);
+  };
+
+  return (
+    <RadioWrapper>
+      <span className="radio-input">
+        <input
+          type="radio"
+          css={radioStyle}
+          name={name}
+          onChange={handleChange}
+          checked={isChecked}
+        />
+      </span>
+      <span className="radio-label" css={labelStyle}>
+        {label}
+      </span>
+    </RadioWrapper>
+  );
+};
 
 const radioStyle = css`
   appearance: none !important;

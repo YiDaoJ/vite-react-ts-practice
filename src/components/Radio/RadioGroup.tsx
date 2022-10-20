@@ -28,4 +28,5 @@ const GroupLabelStyle = css`
   letter-spacing: 0.011875rem;
   margin-bottom: 0.5rem;
   color: #6c767e;
+  font-family: Verdana, Arial, sans-serif;
 `;
