@@ -11,8 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof RadioGroup> = (args) => (
   <RadioGroup {...args}>
-    <RadioButton label="Kabel (KOAX)" name="accessTypeCoax" />
-    <RadioButton label="Glasfaser (Fiber)" name="accessTypeFiber" />
+    <RadioButton label='Kabel (KOAX)' name='accessTypeCoax' />
+    <RadioButton label='Glasfaser (Fiber)' name='accessTypeFiber' />
   </RadioGroup>
 );
 

@@ -33,16 +33,16 @@ export const RadioButton: FC<RadioButtonProps> = ({
 
   return (
     <RadioWrapper>
-      <span className="radio-input">
+      <span className='radio-input'>
         <input
-          type="radio"
+          type='radio'
           css={radioStyle}
           name={name}
           onChange={handleChange}
           checked={isChecked}
         />
       </span>
-      <span className="radio-label" css={labelStyle}>
+      <span className='radio-label' css={labelStyle}>
         {label}
       </span>
     </RadioWrapper>

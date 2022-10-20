@@ -8,8 +8,8 @@ describe("RadioButton test", () => {
     const handleChange = jest.fn();
     const { asFragment } = render(
       <RadioButton
-        label="Test"
-        name="test"
+        label='Test'
+        name='test'
         checked={false}
         onChange={handleChange}
       />
@@ -22,7 +22,7 @@ describe("RadioButton test", () => {
     const user = userEvent.setup();
 
     render(
-      <RadioButton label="Test" name="test" checked onChange={handleChange} />
+      <RadioButton label='Test' name='test' checked onChange={handleChange} />
     );
 
     // const input = screen.getByRole("input");
