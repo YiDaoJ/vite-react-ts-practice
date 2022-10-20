@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton test render Radio Component 1`] = `
+exports[`Radio test render Radio Component 1`] = `
 <DocumentFragment>
   <label
-    class="css-vrzw69-RadioWrapper e1t6yr3u0"
+    class="css-vrzw69-RadioWrapper examj980"
   >
     <span
       class="radio-input"

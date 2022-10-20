@@ -1,18 +1,13 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import { RadioButton } from "..";
+import { RadioButton as Radio } from "..";
 
-describe("RadioButton test", () => {
+describe("Radio test", () => {
   test("render Radio Component", () => {
     const handleChange = jest.fn();
     const { asFragment } = render(
-      <RadioButton
-        label='Test'
-        name='test'
-        checked={false}
-        onChange={handleChange}
-      />
+      <Radio label='Test' name='test' checked={false} onChange={handleChange} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -21,9 +16,7 @@ describe("RadioButton test", () => {
     const handleChange = jest.fn();
     const user = userEvent.setup();
 
-    render(
-      <RadioButton label='Test' name='test' checked onChange={handleChange} />
-    );
+    render(<Radio label='Test' name='test' checked onChange={handleChange} />);
 
     // const input = screen.getByRole("input");
     //  Unable to find an accessible element with the role "input"

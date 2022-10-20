@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup test render RadioGroup component 1`] = `
+<DocumentFragment>
+  <div
+    class="radio-group__container"
+    data-testid="radio-group"
+  >
+    <label
+      class="radio-group__label css-6sc5xn-GroupLabelStyle"
+    >
+      Gender
+    </label>
+    <div
+      class="radio-group__control"
+    >
+      <label
+        class="css-vrzw69-RadioWrapper e1jw82t60"
+      >
+        <span
+          class="radio-input"
+        >
+          <input
+            checked=""
+            class="css-15i6z5e-radioStyle"
+            name="female"
+            type="radio"
+            value="female"
+          />
+        </span>
+        <span
+          class="radio-label css-6xwsiz-labelStyle"
+        >
+          Female
+        </span>
+      </label>
+      <label
+        class="css-vrzw69-RadioWrapper e1jw82t60"
+      >
+        <span
+          class="radio-input"
+        >
+          <input
+            class="css-15i6z5e-radioStyle"
+            name="male"
+            type="radio"
+            value="male"
+          />
+        </span>
+        <span
+          class="radio-label css-6xwsiz-labelStyle"
+        >
+          Male
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

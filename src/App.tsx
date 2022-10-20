@@ -24,14 +24,13 @@ function App() {
     <div className='App'>
       <Radio name='test' label='Test' />
 
-      {/* <RadioGroupRebuild /> */}
       <RadioGroup
-        label='ANSCHLUSSART'
+        label='Anschlussart'
         defaultValue='wifi'
         onChange={handleChange}
       >
-        <RadioButton value='cable' label='Kabel' />
-        <RadioButton value='wifi' label='WI-FI' />
+        <RadioButton value='accessTypeCoax' label='Kabel (KOAX)' />
+        <RadioButton value='accessTypeFiber' label='Glasfaser (Fiber)' />
       </RadioGroup>
     </div>
   );

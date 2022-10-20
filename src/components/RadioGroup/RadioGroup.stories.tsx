@@ -10,11 +10,11 @@ export default {
 
 const Template: ComponentStory<typeof RadioGroup> = (args) => (
   <RadioGroup {...args}>
-    <RadioButton value='cable' label='Kabel' />
-    <RadioButton value='wifi' label='WI-FI' />
+    <RadioButton value='a' label='Option A' />
+    <RadioButton value='b' label='Option B' />
   </RadioGroup>
 );
 
 export const Standard = Template.bind({});
 
-Standard.args = { label: "ANSCHLUSSART", defaultValue: "wifi" };
+Standard.args = { label: "Please select:", defaultValue: "a" };
