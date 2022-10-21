@@ -13,3 +13,11 @@ const Template: ComponentStory<typeof RadioButton> = (args) => (
 
 export const Standard = Template.bind({});
 Standard.args = { label: "Radio", name: "radio", checked: false };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Disabled",
+  name: "disabled",
+  checked: false,
+  disabled: true,
+};

@@ -3,19 +3,19 @@
 exports[`Radio test render Radio Component 1`] = `
 <DocumentFragment>
   <label
-    class="css-vrzw69-RadioWrapper examj980"
+    class="css-l0p67e-RadioWrapper examj981"
   >
     <span
       class="radio-input"
     >
       <input
-        class="css-15i6z5e-radioStyle"
+        class="css-1ayomz5-StyledInput-inputActive examj980"
         name="test"
         type="radio"
       />
     </span>
     <span
-      class="radio-label css-6xwsiz-labelStyle"
+      class="radio-label css-1wlzwar-labelStyle"
     >
       Test
     </span>

@@ -2,11 +2,15 @@ import { css } from "@emotion/react";
 import React, { ChangeEvent, FC, PropsWithChildren, useState } from "react";
 import RadioGroupContext from "./context";
 
-interface RadioGroupProps {
+interface RadioGroupStyleProps {
+  horizontal?: boolean;
+}
+
+interface RadioGroupProps extends RadioGroupStyleProps {
   label?: string;
   name?: string;
   defaultValue?: string;
-  onChange(value: string): void;
+  onChange?(value: string): void;
 }
 
 export const RadioGroup: FC<PropsWithChildren<RadioGroupProps>> = ({
@@ -14,6 +18,7 @@ export const RadioGroup: FC<PropsWithChildren<RadioGroupProps>> = ({
   name,
   defaultValue,
   onChange,
+  horizontal,
   children,
 }) => {
   const [value, setValue] = useState(defaultValue);
@@ -35,7 +40,12 @@ export const RadioGroup: FC<PropsWithChildren<RadioGroupProps>> = ({
       <RadioGroupContext.Provider
         value={{ name, onChange: handleChange, selected: value }}
       >
-        <div className='radio-group__control'>{children}</div>
+        <div
+          className='radio-group__control'
+          css={horizontal ? GroupControlHorizontal : GroupControlVertical}
+        >
+          {children}
+        </div>
       </RadioGroupContext.Provider>
     </div>
   );
@@ -49,4 +59,16 @@ const GroupLabelStyle = css`
   margin-bottom: 0.5rem;
   color: #6c767e;
   font-family: Verdana, Arial, sans-serif;
+`;
+
+const GroupControlHorizontal = css`
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: flex-start;
+`;
+
+const GroupControlVertical = css`
+  display: flex;
+  flex-direction: column;
 `;

@@ -23,14 +23,17 @@ function App() {
   return (
     <div className='App'>
       <Radio name='test' label='Test' />
+      {/* <Radio name='testD' label='Test Disabled' disabled /> */}
 
       <RadioGroup
         label='Anschlussart'
-        defaultValue='wifi'
+        defaultValue='accessTypeCoax'
         onChange={handleChange}
+        horizontal
       >
         <RadioButton value='accessTypeCoax' label='Kabel (KOAX)' />
         <RadioButton value='accessTypeFiber' label='Glasfaser (Fiber)' />
+        <RadioButton value='accessUndefined' label='Test Disabled' disabled />
       </RadioGroup>
     </div>
   );

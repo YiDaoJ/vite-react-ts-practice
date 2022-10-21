@@ -12,43 +12,43 @@ exports[`RadioGroup test render RadioGroup component 1`] = `
       Gender
     </label>
     <div
-      class="radio-group__control"
+      class="radio-group__control css-19gs4bv-GroupControlVertical"
     >
       <label
-        class="css-vrzw69-RadioWrapper e1jw82t60"
+        class="css-5rvwsk-RadioWrapper e1jw82t61"
       >
         <span
           class="radio-input"
         >
           <input
             checked=""
-            class="css-15i6z5e-radioStyle"
+            class="css-1ayomz5-StyledInput-inputActive e1jw82t60"
             name="female"
             type="radio"
             value="female"
           />
         </span>
         <span
-          class="radio-label css-6xwsiz-labelStyle"
+          class="radio-label css-1wlzwar-labelStyle"
         >
           Female
         </span>
       </label>
       <label
-        class="css-vrzw69-RadioWrapper e1jw82t60"
+        class="css-5rvwsk-RadioWrapper e1jw82t61"
       >
         <span
           class="radio-input"
         >
           <input
-            class="css-15i6z5e-radioStyle"
+            class="css-1ayomz5-StyledInput-inputActive e1jw82t60"
             name="male"
             type="radio"
             value="male"
           />
         </span>
         <span
-          class="radio-label css-6xwsiz-labelStyle"
+          class="radio-label css-1wlzwar-labelStyle"
         >
           Male
         </span>

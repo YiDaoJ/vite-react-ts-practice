@@ -3,24 +3,32 @@ import styled from "@emotion/styled";
 import React, { ChangeEvent, FC, useContext, useEffect, useState } from "react";
 import RadioGroupContext from "./context";
 
-interface RadioButtonProps {
+interface RadioButtonProps extends RadioButtonStyleProps {
   label: string;
   value: string;
 }
 
-export const RadioButton: FC<RadioButtonProps> = ({ label, value }) => {
+interface RadioButtonStyleProps {
+  disabled?: boolean;
+}
+
+export const RadioButton: FC<RadioButtonProps> = ({
+  label,
+  value,
+  disabled,
+}) => {
   const { selected, onChange } = useContext(RadioGroupContext);
 
   return (
-    <RadioWrapper>
+    <RadioWrapper disabled={disabled}>
       <span className='radio-input'>
-        <input
+        <StyledInput
           type='radio'
           name={value}
-          css={radioStyle}
           onChange={onChange}
           value={value}
           checked={selected === value}
+          disabled={disabled}
         />
       </span>
       <span className='radio-label' css={labelStyle}>
@@ -30,7 +38,22 @@ export const RadioButton: FC<RadioButtonProps> = ({ label, value }) => {
   );
 };
 
-const radioStyle = css`
+// ------ wrapper -------
+const RadioWrapper = styled.label<RadioButtonStyleProps>`
+  display: inline-flex;
+  margin-bottom: 1rem;
+  position: relative;
+
+  ${({ disabled }) => disabled && wrapperDisabled};
+`;
+
+const wrapperDisabled = css`
+  color: #6c767e;
+  cursor: not-allowed;
+`;
+
+// ------ input -------
+const StyledInput = styled.input`
   appearance: none !important;
   margin-bottom: 0.3125rem;
   border-color: transparent;
@@ -40,7 +63,6 @@ const radioStyle = css`
   display: inline-block;
   position: relative;
   padding-left: 2rem;
-  cursor: pointer;
   outline: none;
   height: 1px;
 
@@ -59,6 +81,15 @@ const radioStyle = css`
     border-radius: 100%;
   }
 
+  ${({ disabled }) => (disabled ? inputDisabled : inputActive)};
+`;
+
+const inputDisabled = css`
+  pointer-events: none;
+`;
+
+const inputActive = css`
+  cursor: pointer;
   :focus::before {
     border: 0.0625rem solid #000;
     outline: none;
@@ -92,17 +123,10 @@ const radioStyle = css`
   }
 `;
 
+// ------ label -------
 const labelStyle = css`
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: 0.011875rem;
   font-family: Verdana, Arial, sans-serif;
-
-  cursor: pointer;
-`;
-
-const RadioWrapper = styled.label`
-  display: flex;
-  margin-bottom: 1rem;
-  position: relative;
 `;

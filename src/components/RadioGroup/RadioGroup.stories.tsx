@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { RadioGroup } from "./RadioGroup.tsx";
+import { RadioGroup } from "./RadioGroup";
 import { RadioButton } from "./RadioButton";
 
 export default {
@@ -17,4 +17,8 @@ const Template: ComponentStory<typeof RadioGroup> = (args) => (
 
 export const Standard = Template.bind({});
 
-Standard.args = { label: "Please select:", defaultValue: "a" };
+Standard.args = {
+  label: "Please select:",
+  defaultValue: "a",
+  horizontal: false,
+};

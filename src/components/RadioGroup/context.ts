@@ -2,11 +2,11 @@ import React from "react";
 
 export interface RadioGroupContextValue {
   name: string | undefined;
+  selected: string;
   onChange: (
     event: React.ChangeEvent<HTMLInputElement>,
     value?: string
   ) => void;
-  selected: any;
 }
 
 const RadioGroupContext = React.createContext<
