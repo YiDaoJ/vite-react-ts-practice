@@ -21,14 +21,63 @@ describe("RadioGroup test", () => {
     const user = userEvent.setup();
 
     render(
-      <RadioGroup label='Gender' defaultValue='female'>
+      <RadioGroup label='Gender' defaultValue='female' onChange={handleChange}>
         <RadioButton value='female' label='Female' />
         <RadioButton value='male' label='Male' />
       </RadioGroup>
     );
 
-    const element = screen.getByDisplayValue("male");
-    await user.click(element);
-    expect(element).toBeChecked();
+    const elementM = screen.getByDisplayValue("male");
+    const elementF = screen.getByDisplayValue("female");
+    await user.click(elementM);
+    expect(elementM).toBeChecked();
+    // expect(elementM.checked).toEqual(true);
+    expect(elementF.checked).toEqual(false);
+    // screen.debug(elementM);
+    // screen.debug(elementF);
+  });
+
+  test("RadioGroup with disabled option", () => {
+    const handleChange = jest.fn();
+    const user = userEvent.setup();
+
+    render(
+      <RadioGroup label='Test' defaultValue='a'>
+        <RadioButton value='a' label='A' />
+        <RadioButton value='b' label='B' disabled />
+        <RadioButton value='c' label='C' />
+      </RadioGroup>
+    );
+
+    const elementA = screen.getByDisplayValue("a");
+    const elementB = screen.getByDisplayValue("b");
+    const elementC = screen.getByDisplayValue("c");
+
+    // await userEvent.click(elementB);
+    //Qn: Error: Unable to perform pointer interaction as the element has `pointer-events: none`:
+
+    expect(elementA).toBeChecked();
+    expect(elementB).toBeDisabled();
+    expect(elementC.checked).toEqual(false);
+  });
+
+  test("have focus", async () => {
+    render(
+      <RadioGroup label='Test' defaultValue='a'>
+        <RadioButton value='a' label='A' />
+        <RadioButton value='b' label='B' disabled />
+        <RadioButton value='c' label='C' />
+      </RadioGroup>
+    );
+
+    const elementA = screen.getByDisplayValue("a");
+    const elementB = screen.getByDisplayValue("b");
+    const elementC = screen.getByDisplayValue("c");
+
+    await userEvent.tab();
+    expect(elementA).toHaveFocus();
+
+    await userEvent.tab();
+    expect(elementC).toHaveFocus();
   });
 });

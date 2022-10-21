@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio test render Radio Component 1`] = `
+exports[`Radio test render Radio component 1`] = `
 <DocumentFragment>
   <label
     class="css-l0p67e-RadioWrapper examj981"
